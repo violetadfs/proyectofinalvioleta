@@ -12,7 +12,7 @@ pipeline {
 
    stages {
         stage('Build') {
-        stage('sonar') {
+        ('sonar') {
             
             steps {
                 dir(path:'cidr_convert_api/java/cidr-api/'){
