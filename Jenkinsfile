@@ -22,7 +22,7 @@ pipeline {
             }
         stage('sonar') { 
             steps {
-                sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar '
+                sh 'mvn -f cidr_convert_api/java/cidr-api/pom.xml clean package sonar:sonar'
                 }
             }
         }
