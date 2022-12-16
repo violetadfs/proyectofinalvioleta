@@ -1,10 +1,23 @@
 pipeline {
     agent any
 
-    stages {
-        stage('Hello') {
+ 
+
+   tools {
+        // Install the Maven version configured as "M3" and add it to the path.
+        maven "M3"
+    }
+
+ 
+
+   stages {
+        stage('Build') {
+            dir(path: 'cidr_convert_api/java/cidr-api/')
             steps {
-                echo 'Hello World'
+                // Get some code from a GitHub repository
+                sh 'echo "this is my building stege"'
+                //git 'https://github.com/violetadfs/proyectofinalvioleta.git'
+                 sh 'mvn -B -DskipTests clean package'
             }
         }
     }
