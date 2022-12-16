@@ -22,7 +22,9 @@ pipeline {
             }
         stage('sonar') { 
             steps {
+                withSonarQubeEnv('Sonar') {
                 sh 'mvn -f cidr_convert_api/java/cidr-api/pom.xml clean package sonar:sonar'
+                    }
                 }
             }
         }
