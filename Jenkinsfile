@@ -12,16 +12,13 @@ pipeline {
 
    stages {
         stage('Build') {
-        ('sonar') {
             
             steps {
                 dir(path:'cidr_convert_api/java/cidr-api/'){
                 // Get some code from a GitHub repository
                 sh 'echo "this is my building stege"'
                  sh 'mvn -B -DskipTests clean package'
-                    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.7.0.1746:sonar'
-                     }
-                   }
+                    }
             }
         }
     }
