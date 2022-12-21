@@ -17,7 +17,7 @@ pipeline {
                 python3 --version
 
                 cd ./cidr_convert_api/python/
-		pip install -r requirements.txt
+
                 python3 tests.py
 
                 '''                
@@ -26,7 +26,34 @@ pipeline {
 
         }
 
+
+
+        stage('SonarCloud Static Analysis') {
+
+            steps {
+
+                script {
+
+                    withSonarQubeEnv ('SonarCloud') {
+
+                        sonar-scanner.bat \
+
+                            -D"sonar.organization=violetadfs" \
+
+                            -D"sonar.projectKey=violetadfs_proyectofinalvioleta" \
+
+                            -D"sonar.sources=proyectofinalvioleta/jenkinsfile." \
+
+                            -D"sonar.host.url=https://sonarcloud.io"
+
+                      }
+
+                    }
+
+                }
+
+        }
+
     }
 
 }
-
