@@ -42,7 +42,7 @@ pipeline {
 
                             -D"sonar.projectKey=violetadfs_proyectofinalvioleta" \
 
-                            -D"sonar.sources=proyectofinalvioleta/jenkinsfile." \
+                            -D"sonar.sources=proyectofinalvioleta/jenkinsfile" \
 
                             -D"sonar.host.url=https://sonarcloud.io"
 
