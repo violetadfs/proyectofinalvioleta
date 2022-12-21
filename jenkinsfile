@@ -18,7 +18,7 @@ pipeline {
 
                 cd ./cidr_convert_api/python/
 
-                python3 tests.py
+		 tests.py
 
                 '''                
 
