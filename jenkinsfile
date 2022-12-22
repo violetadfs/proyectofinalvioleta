@@ -20,7 +20,7 @@ pipeline {
 
                 cd ./cidr_convert_api/python/
 		pwd
-		 tests.py
+		//tests.py
 
                 '''                
 
