@@ -28,7 +28,7 @@ pipeline {
         }*/
 
 
-        /*
+        
         stage('SonarCloud Static Analysis') {
             steps {
                sh ' cd cidr_convert_api/python/ '
@@ -42,7 +42,7 @@ pipeline {
                     '''
             }
            
-        }*/
+        }
 
         stage('build'){
             steps{
