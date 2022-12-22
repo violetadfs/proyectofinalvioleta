@@ -37,9 +37,9 @@ pipeline {
                          sonar-scanner \
                         -Dsonar.organization=violetadfs \
                         -Dsonar.projectKey=violetadfs_proyectofinalvioleta \
-                        -Dsonar.sources=. \
+                        -Dsonar.sources=./cidr_convert_api/python/ \
                         -Dsonar.host.url=https://sonarcloud.io
-                        
+
                     '''
             }
            
