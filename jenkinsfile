@@ -1,6 +1,6 @@
 pipeline {
     environment{
-        SCANNER_HOME=tool 'DOTT'
+        SCANNER_HOME=tool 'sonarscanner'
     }
     agent any
 
@@ -32,7 +32,7 @@ pipeline {
         stage('SonarCloud Static Analysis') {
             steps {
                sh ' cd cidr_convert_api/python/ '
-               withSonarQubeEnv('DOTT') {
+               withSonarQubeEnv('sonarscanner') {
                 sh '''                    
                          sonar-scanner \
                         -Dsonar.organization=violetadfs \
