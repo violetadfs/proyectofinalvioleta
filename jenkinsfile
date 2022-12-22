@@ -52,6 +52,7 @@ pipeline {
                 docker build . -t dott
                 docker tag dott proyectofinal/dott
                 docker push proyectofinal/dott
+                
                      
                 '''
 
