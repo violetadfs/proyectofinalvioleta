@@ -51,18 +51,28 @@ pipeline {
                 cd cidr_convert_api/python/
                 docker build . -t dott
                 docker tag dott violetadfs/dott
-                docker push violetadfs/dott
-
-                     
+                docker push violetadfs/dott                    
                 '''
-
-
-
-
-
             }
         }
-
+        
+        stage('deploy'){
+            steps{
+                script{
+                    try{
+                        sh '''
+                        docker rm -vf $(docker ps -aq)
+                        '''
+                    }catch(error){
+                        echo error.getMessage()
+                    }
+                    sh '''
+                        docker run -d --name pythonproject -p 8000:8000 violetadfs/dott
+                        docker ps -a
+                        '''
+                }
+            }
+        }
 
     }
 
