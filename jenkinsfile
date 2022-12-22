@@ -32,7 +32,7 @@ pipeline {
         stage('SonarCloud Static Analysis') {
             steps {
                sh ' cd cidr_convert_api/python/ '
-               withSonarQubeEnv(installationName: 'sonarscanner') {
+               withSonarQubeEnv('SonarCloud') {
                 sh '''                    
                          ${scannerHome}/bin/sonar-scanner \
                         -Dsonar.organization=violetadfs \
