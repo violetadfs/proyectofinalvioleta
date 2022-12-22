@@ -1,5 +1,7 @@
 pipeline {
-
+    environment{
+        SCANNER_HOME=tool 'DOTT'
+    }
     agent any
 
 
@@ -29,29 +31,18 @@ pipeline {
 
 
         stage('SonarCloud Static Analysis') {
-
             steps {
-
-                script {
-
-                    withSonarQubeEnv ('SonarCloud') {
-
-                        sonar-scanner.bat \
-
-                            -D"sonar.organization=violetadfs" \
-
-                            -D"sonar.projectKey=violetadfs_proyectofinalvioleta" \
-
-                            -D"sonar.sources=proyectofinalvioleta/jenkinsfile" \
-
-                            -D"sonar.host.url=https://sonarcloud.io"
-
-                      }
-
-                    }
-
-                }
-
+               sh ' cd cidr_convert_api/python/ '
+                sh '''
+                    withSonarQubeEnv('sonarDOTT') {
+                         sonar-scanner \
+                        -Dsonar.organization=violetadfs \
+                        -Dsonar.projectKey=violetadfs_proyectofinalvioleta \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=https://sonarcloud.io
+                    '''
+            }
+           
         }
 
     }
