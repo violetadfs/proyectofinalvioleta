@@ -35,7 +35,7 @@ pipeline {
                sh ' cd cidr_convert_api/python/ '
                withSonarQubeEnv('sonarscanner') {
                 sh '''                    
-                         sonar-scanner \
+                         ${scannerHome}/bin/sonar-scanner \
                         -Dsonar.organization=violetadfs \
                         -Dsonar.projectKey=violetadfs_proyectofinalvioleta \
                         -Dsonar.sources=./cidr_convert_api/python/ \
