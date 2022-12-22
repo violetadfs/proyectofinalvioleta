@@ -51,7 +51,7 @@ pipeline {
                 cd cidr_convert_api/python/
                 docker build . -t dott
                 docker tag dott violetadfs/dott
-                docker push violetadfs/proyectofinal
+                docker push violetadfs/dott
 
                      
                 '''
