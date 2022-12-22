@@ -19,7 +19,7 @@ pipeline {
                 python3 --version
 
                 cd ./cidr_convert_api/python/
-
+		pwd
 		 tests.py
 
                 '''                
