@@ -54,8 +54,7 @@ pipeline {
                 docker build . -t dott
                 docker tag dott violetadfs/dott
                 docker push violetadfs/dott                    
-                '''
-                
+                '''                
             }
         }
         
